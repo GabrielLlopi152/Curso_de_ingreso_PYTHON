@@ -83,8 +83,6 @@ class App(customtkinter.CTk):
          Resultado_Num = self.num_operador_a / self.num_operador_b
          Resultado_Txt = str(Resultado_Num)
          alert(title= "Atención", message = "El resultado de su división es " + Resultado_Txt)
-
-    
         
 if __name__ == "__main__":
     app = App()
