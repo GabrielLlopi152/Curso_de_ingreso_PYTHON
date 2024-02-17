@@ -46,8 +46,7 @@ class App(customtkinter.CTk):
          lamparitas = int(self.combobox_cantidad.get())
          precio_lamp_num = lamparitas * 800
          precio_lamp_txt = str(precio_lamp_num)
-         marca = self.combobox_marca.get()
-        
+         marca = self.combobox_marca.get()      
 
          if(lamparitas >= 6 and lamparitas <= 12):
             precio_oferta_A_num = round(precio_lamp_num / 2)
@@ -58,7 +57,6 @@ class App(customtkinter.CTk):
             else:
                 alert(title= "Atención", message= "El total es de $" + precio_oferta_A_txt)
 
-
          elif(lamparitas == 5):
             if(marca == "ArgentinaLuz"):
                 precio_oferta_1B = str(round(precio_lamp_num * 0.6))
@@ -67,7 +65,6 @@ class App(customtkinter.CTk):
                 precio_oferta_2B = str(round(precio_lamp_num * 0.7))
                 alert(title= "Atención", message= "El total es de $" + precio_oferta_2B)
 
-
          elif(lamparitas == 4):
             if(marca == "ArgentinaLuz" or marca == "FelipeLamparas"):
                 precio_oferta_1C = str(round(precio_lamp_num * 0.75))
@@ -75,7 +72,6 @@ class App(customtkinter.CTk):
             else:
                 precio_oferta_2C = str(round(precio_lamp_num * 0.8))
                 alert(title= "Atención", message= "El total es de $" + precio_oferta_2C)
-
 
          elif(lamparitas == 3):
             if(marca == "ArgentinaLuz"):
@@ -88,14 +84,8 @@ class App(customtkinter.CTk):
                 precio_oferta_3D = str(round(precio_lamp_num * 0.95))
                 alert(title= "Atención", message= "El total es de $" + precio_oferta_3D)
 
-
          else:
-            alert(title= "Atención", message= "El total es de $" + precio_lamp_txt)
-            
-
-             
-
-        
+            alert(title= "Atención", message= "El total es de $" + precio_lamp_txt)       
     
 if __name__ == "__main__":
     app = App()
