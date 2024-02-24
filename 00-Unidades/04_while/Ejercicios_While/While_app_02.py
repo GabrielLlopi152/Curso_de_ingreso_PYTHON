@@ -31,9 +31,8 @@ class App(customtkinter.CTk):
     def btn_mostrar_iteracion_on_click(self):
          a = 10
 
-         while a >= 1:
-        
-            alert("Atención", message= a)
+         while a >= 1:        
+            alert(title= "Atención", message= a)
 
             a = a - 1
     

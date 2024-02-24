@@ -3,10 +3,11 @@ from tkinter.messagebox import showinfo as alert
 from tkinter.messagebox import askyesno as question
 from tkinter.simpledialog import askstring as prompt
 import customtkinter
+import random
 
 '''
-nombre:
-apellido:
+nombre: Gabriel
+apellido: Llopi
 ---
 Ejercicio: for_09
 ---
@@ -37,7 +38,44 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        numero_secreto = random.randint(1, 100)
+        #print(numero_secreto)
+        intento = 0
+
+        for i in range(1, 7):
+            intento += 1
+            numero_jugador = prompt(title= "Atención", prompt= "Ingrese un número entre el 1 al 100")
+            titulo = "Perdiste"
+            mensaje = "Lo siento, suerte la próxima vez."
+
+            if numero_secreto == int(numero_jugador):
+                match(intento):
+                    case 1:
+                        titulo = "¡Sorprendente!"
+                        mensaje = "Usted es todo un psíquico."
+                    case 2:
+                        titulo = "Increíble"
+                        mensaje = "Excelente percepción."
+                    case 3:
+                        titulo = "Muy bien"
+                        mensaje = "Esto es suerte."
+                    case 4 | 5 | 6:
+                        titulo = "Felicidades"
+                        mensaje = "Excelente técnica."
+                break
+
+            else:
+                if numero_secreto > int(numero_jugador):
+                    alert(title= "¡Casi!", message= "Fallo, el número secreto es mayor al ingresado.")
+                else:
+                    alert(title= "¡Casi!", message= "Fallo, el número secreto es menor al ingresado.")
+                
+        mensaje_final =  "{0} El número secreto era: {1}".format(mensaje, numero_secreto)
+        
+        alert(title= titulo , message= mensaje_final)       
+
+
+
                 
 
     

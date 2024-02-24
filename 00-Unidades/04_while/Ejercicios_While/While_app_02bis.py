@@ -29,14 +29,14 @@ class App(customtkinter.CTk):
         
     
     def btn_mostrar_iteracion_on_click(self):
-         a = 2
+        a = 0
+        suma = 0
 
-         while a <= 10:
-        
-            alert("Atención", message= a)
-
+        while a < 10:
             a = a + 2
-    
+            suma = a + suma
+
+            alert(title= "Atención", message= suma)
     
 if __name__ == "__main__":
     app = App()
